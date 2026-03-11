@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply bg-brand-dark text-brand-gold-light font-sans;
+    overflow-x: hidden;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  ::selection {
+    background-color: rgba(197, 168, 128, 0.3);
+    color: #E6D5B8;
+  }
+
+  img {
+    -webkit-user-drag: none;
+  }
+}
+
+@layer components {
+  /* Film grain overlay — add to parent containers */
+  .grain::after {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.4;
+  }
+
+  /* Warm color grading for all menu/team photos */
+  .photo-warm {
+    filter: sepia(0.08) saturate(1.05) brightness(0.88) contrast(1.05);
+  }
+
+  /* Golden frame: thin border + inner corner brackets */
+  .photo-frame {
+    position: relative;
+  }
+  .photo-frame::before,
+  .photo-frame::after {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    z-index: 10;
+  }
+  /* Thin full border */
+  .photo-frame::before {
+    inset: 0;
+    border: 1px solid rgba(197, 168, 128, 0.15);
+  }
+  /* Corner brackets inside the image */
+  .photo-frame::after {
+    inset: 6px;
+    background:
+      linear-gradient(rgba(197,168,128,0.3), rgba(197,168,128,0.3)) top left / 24px 1px no-repeat,
+      linear-gradient(rgba(197,168,128,0.3), rgba(197,168,128,0.3)) top left / 1px 24px no-repeat,
+      linear-gradient(rgba(197,168,128,0.3), rgba(197,168,128,0.3)) top right / 24px 1px no-repeat,
+      linear-gradient(rgba(197,168,128,0.3), rgba(197,168,128,0.3)) top right / 1px 24px no-repeat,
+      linear-gradient(rgba(197,168,128,0.3), rgba(197,168,128,0.3)) bottom left / 24px 1px no-repeat,
+      linear-gradient(rgba(197,168,128,0.3), rgba(197,168,128,0.3)) bottom left / 1px 24px no-repeat,
+      linear-gradient(rgba(197,168,128,0.3), rgba(197,168,128,0.3)) bottom right / 24px 1px no-repeat,
+      linear-gradient(rgba(197,168,128,0.3), rgba(197,168,128,0.3)) bottom right / 1px 24px no-repeat;
+  }
+
+  /* Golden glow on photo hover */
+  .photo-glow {
+    transition: box-shadow 0.5s ease;
+  }
+  .photo-glow:hover {
+    box-shadow: 0 0 25px rgba(197, 168, 128, 0.1);
+  }
+
+  /* Touch-friendly tap targets */
+  .tap-target {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Shimmer effect for CTA buttons */
+  .btn-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-shimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(197, 168, 128, 0.08),
+      transparent
+    );
+    animation: shimmer 3s ease-in-out infinite;
+  }
+  @keyframes shimmer {
+    0% { left: -100%; }
+    50% { left: 100%; }
+    100% { left: 100%; }
+  }
+
+  /* Custom cursor for image containers (desktop only) */
+  @media (hover: hover) and (pointer: fine) {
+    .cursor-view {
+      cursor: none;
+      position: relative;
+    }
+    .cursor-view::before {
+      content: 'VER';
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 1px solid rgba(197, 168, 128, 0.6);
+      background: rgba(21, 35, 27, 0.85);
+      color: rgba(197, 168, 128, 0.9);
+      font-family: 'Lato', sans-serif;
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      opacity: 0;
+      transform: scale(0.5);
+      transition: opacity 0.3s, transform 0.3s;
+      z-index: 100;
+      top: var(--cursor-y, 50%);
+      left: var(--cursor-x, 50%);
+      translate: -50% -50%;
+    }
+    .cursor-view:hover::before {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
