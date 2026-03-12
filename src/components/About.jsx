@@ -42,19 +42,19 @@ export default function About() {
               variants={fadeUp}
               className="font-sans text-brand-gold-light/70 text-base sm:text-lg leading-relaxed mt-6 text-justify"
             >
-              En Trivetto Banquetes entendemos que cada evento es único. Nuestro equipo de 
-              chefs especializados combina técnicas de cocina internacional con los sabores 
-              más auténticos de la gastronomía mexicana, creando menús personalizados que 
-              deleitan todos los sentidos.
+              En Trivetto Banquetes nos enfocamos en ofrecer alimentos de excelente calidad, 
+              servicio profesional y atención cálida para que tu evento sea una experiencia 
+              memorable. Nuestro equipo de chefs combina técnicas de cocina internacional con 
+              los sabores más auténticos de la gastronomía mexicana.
             </motion.p>
 
             <motion.p
               variants={fadeUp}
               className="font-sans text-brand-gold-light/70 text-base sm:text-lg leading-relaxed mt-4 text-justify"
             >
-              Desde bodas íntimas hasta grandes celebraciones corporativas, nos encargamos 
-              de cada detalle — desde la selección de ingredientes premium hasta la 
-              presentación impecable de cada platillo — para que tú solo te preocupes 
+              Trabajamos con ingredientes frescos y preparación el mismo día del evento. 
+              Cuidamos presentación, tiempos de servicio y experiencia del invitado — 
+              desde el montaje hasta la limpieza — para que tú solo te preocupes 
               por disfrutar.
             </motion.p>
 

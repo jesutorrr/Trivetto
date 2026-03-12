@@ -4,15 +4,15 @@ import { Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import SectionHeading from './ui/SectionHeading'
 
-import img08 from '../assets/team/08.JPG'
-import img09 from '../assets/team/09.JPG'
 import img10 from '../assets/team/10.JPG'
 import img11 from '../assets/team/11.JPG'
+import img12 from '../assets/team/12.JPG'
+import img13 from '../assets/team/13.JPG'
 
 const team = [
   {
     image: img11,
-    name: 'Chef Alejandra',
+    name: 'Chef Alejandra Zarrabe',
     role: 'Chef Ejecutiva & Fundadora',
   },
   {
@@ -21,14 +21,14 @@ const team = [
     role: 'Chef de Partida — Especialista en Mariscos',
   },
   {
-    image: img08,
-    name: 'Equipo de Servicio',
-    role: 'Meseros & Staff profesional para cada evento',
+    image: img12,
+    name: 'Chef Oscar Mondragón',
+    role: 'Especialista en Alta Cocina',
   },
   {
-    image: img09,
-    name: 'Equipo de Cocina',
-    role: 'Brigada completa en eventos al aire libre',
+    image: img13,
+    name: 'Nuestro Equipo',
+    role: 'Brigada completa de cocina y servicio',
   },
 ]
 

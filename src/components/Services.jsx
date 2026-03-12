@@ -4,23 +4,23 @@ import SectionHeading from './ui/SectionHeading'
 const services = [
   {
     number: '01',
-    title: 'Bodas',
-    description: 'Menús personalizados que hacen de tu día especial un festín inolvidable.',
+    title: 'Bodas & Celebraciones',
+    description: 'Menús de 1 a 3 tiempos personalizados para bodas, bautizos, cumpleaños y aniversarios.',
   },
   {
     number: '02',
     title: 'Eventos Corporativos',
-    description: 'Catering ejecutivo con la presentación y calidad que tu empresa merece.',
+    description: 'Catering ejecutivo con montaje, personal uniformado y coordinación completa del servicio.',
   },
   {
     number: '03',
-    title: 'Celebraciones Privadas',
-    description: 'Bautizos, cumpleaños, aniversarios — momentos íntimos con sabor extraordinario.',
+    title: 'Cocteles & Recepciones',
+    description: 'Tapas, canapés y vol-au-vents gourmet para recibir a tus invitados con estilo.',
   },
   {
     number: '04',
-    title: 'Cocteles & Recepciones',
-    description: 'Canapés, estaciones gourmet y barra de bebidas para recibir a tus invitados.',
+    title: 'Servicio Personalizado',
+    description: 'Ingredientes frescos preparados el mismo día. Incluye montaje, desmontaje y limpieza.',
   },
 ]
 
